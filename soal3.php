@@ -1,0 +1,15 @@
+<?php
+
+function fibonacci($n,$first = 0,$second = 1)
+{
+    $fib = [$first,$second];
+    for($i=1;$i<$n;$i++)
+    {
+        $fib[] = $fib[$i]+$fib[$i-1];
+    }
+    return $fib;
+}
+
+echo "<pre>";
+// print_r(json_decode(json_encode((object) fibonacci(50)), FALSE));
+print_r((object) fibonacci(50));
